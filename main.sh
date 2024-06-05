@@ -6,7 +6,7 @@ fi
 urmatorul_id=$((ultimul_id + 1))
 
 echo "1.Sign In"
-echo "2.Sign Up"
+echo "2.Create new user"
 echo "3.Delete account(admin)"
 echo "4.Exit"
 echo "5.Guest"
@@ -26,8 +26,8 @@ if [ $varianta -eq 1 ]; then
 
     if [ "$nume" == "Guest" ] || [ "$nume" == "guest" ]; then
         echo ".............................................."
-        sleep 2
-        echo "You cannot call yourself guest."
+        sleep 1
+        echo "Name unavailable."
 
     elif tail -n +2 utilizatori.csv | cut -d ',' -f 1 | grep -x "$nume" > /dev/null; then
         i=0
@@ -37,7 +37,7 @@ if [ $varianta -eq 1 ]; then
         while ! grep -E "^$nume,$parola," utilizatori.csv > /dev/null; do
             i=$((i + 1))
             if [ $i -lt 3 ]; then
-                echo "Incorrect password for $nume. You have $((3 - i)) tries left."
+                echo "Incorrect password for $nume. $((3 - i)) tries left."
                 echo "Try again: "
                 read -s parola
             else
@@ -66,7 +66,7 @@ if [ $varianta -eq 1 ]; then
             source connected.sh $nume
         fi
     else
-        echo "User doesn't exist. Wanna create it?"
+        echo "User doesn't exist. Do you want to create it?"
         echo "Y/N"
         read raspuns
 
@@ -132,8 +132,7 @@ if [ $varianta -eq 3 ]; then
 
         if tail -n +2 utilizatori.csv | cut -d ',' -f 1 | grep -x "$nume" > /dev/null; then
             if [ "$p4rola" == "admin" ]; then
-                echo "Are you sure you want to delete $nume?"
-                echo "Y/N"
+                echo "Are you sure you want to delete $nume? Y/N"
                 read da
                 if [ "$da" == "Y" ] || [ "$da" == "y" ]; then
                 rm -r /home/your_dir/$nume
@@ -149,7 +148,7 @@ fi
 
 if [ $varianta -eq 5 ]; then
     nume="Guest"
-    echo "Connecting Guest account..."
+    echo "Connecting to Guest account..."
     sleep 1
     mkdir -p "/home/your_dir/Guest"
     touch /home/your_dir/Guest/raport.txt
