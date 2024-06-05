@@ -38,7 +38,7 @@ if [ -d "/home/your_dir/$nume" ]; then
         echo -ne "${reset}"
         director_curent=$(pwd)
 
-        if [ "$comanda" == "ajutor" ]; then
+        if [ "$comanda" == "helpme" ]; then
             /home/your_dir/ajutor.sh
 
         elif [ $interzis -eq 1 ]; then
@@ -97,13 +97,13 @@ if [ -d "/home/your_dir/$nume" ]; then
             fi
 
         elif [ "$comanda" == "chpass" ] && [ "$nume" != "Guest" ]; then
-            echo -n "Write current password:"
+            echo -n "Enter current password: "
             read parolaactuala
             if grep -E "$nume,$parolaactuala," /home/your_dir/utilizatori.csv > /dev/null; then
-                echo -n "New password:"
+                echo -n "New password: "
                 read nouaparola
                 sed -i "s/$nume,$parolaactuala/$nume,$nouaparola/" /home/your_dir/utilizatori.csv
-                echo "Success!"
+                echo "Password changed!"
             else
                 echo "Password doesn't match!"
             fi
