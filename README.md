@@ -13,8 +13,8 @@ My classmate and I teamed up for this Operating Systems class project, spending 
 ### 3. Allow all .sh files permission to execute with the *chmod* command. Run `main.sh` using the *source* command.
 
 ## Things you should know
-- All existent users can be found in 'utilizatori.csv'.
+- All existent users can be found in `utilizatori.csv`.
 - The **Guest** account has limited access and the folder is deleted on logout.
-- Password for deleting users is "*admin*". If you type "*back*" it brings you back to the menu. 
-- After you logged into an account, use command 'helpme' to see custom commands we created (and maybe create your own custom commands). Also, you can use basic linux commands normally while logged in, as this simulates a terminal.
-- Don't delete files 'history.txt' and 'raport.txt'.
+- Password for deleting users is '*admin*'. If you type '*back*' it brings you back to the menu. 
+- After you logged into an account, use command `helpme` to see custom commands we created (and maybe create your own custom commands). Also, you can use basic linux commands normally while logged in, as this simulates a terminal.
+- Don't delete files `history.txt` and `raport.txt`.
