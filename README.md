@@ -10,7 +10,7 @@ My classmate and I teamed up for this Operating Systems class project, spending 
 ## How to run the project
 ### 1. Install all the files on a Linux OS, or use WSL on windows; (Install all of them in the same folder)
 ### 2. Look in every .sh file and replace "your_dir" with the path where you installed the files;
-### 3. Allow all .sh files permission to execute with the *chmod* command. Run 'main.sh' using the *source* command.
+### 3. Allow all .sh files permission to execute with the *chmod* command. Run `main.sh` using the *source* command.
 
 ## Things you should know
 - All existent users can be found in 'utilizatori.csv'.
