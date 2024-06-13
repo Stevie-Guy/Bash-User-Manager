@@ -1,3 +1,4 @@
+clear
 while true ; do
 ultimul_id=$(tail -n +2 utilizatori.csv | cut -d ',' -f 4 | sort -n | tail -n 1)
 if [ -z "$ultimul_id" ]; then
